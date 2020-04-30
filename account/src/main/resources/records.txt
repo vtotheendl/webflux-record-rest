@@ -1,0 +1,5 @@
+Bluefoot,Barry,M,Purple,1981-02-07
+Redhand,Sam,M,Blue,1908-12-17
+Unger,Suzie,F,Bright,1961-11-15
+Lightfoot,Lori,F,Purple,1970-03-04
+Bad,Lori,F
