@@ -15,7 +15,7 @@ LastName, FirstName, Gender, FavoriteColor, DateOfBirth
 LastName FirstName Gender FavoriteColor DateOfBirth
 
 REST Endpoints
-*	POST /records - Post a single data line in any of the 3 formats supported by your existing code
+*	POST /records - Post a single data line
 *	GET /records/gender - returns records sorted by gender
 *	GET /records/birthdate - returns records sorted by birthdate
 *	GET /records/name - returns records sorted by name
@@ -25,32 +25,36 @@ The easiest way to run this code is via the gradle bootRun task.
 
 `$ ./gradlew bootRun --args=records.txt,records2.txt,records3.txt`
 
-Where args parameters are the files that should be parsed and loaded.  As many files can be specified as desired, each file should be separated by a comma.  
+Where the args parameters are the files that should be parsed and loaded.  As many files can be specified as desired, each file should be separated by a comma.  
 
-You can add your own files to add more data. All test files are located here:  
-webflux-record-rest/account/src/main/resources
+You can add your own files to add more data. All test files should be located here:   
+`webflux-record-rest/account/src/main/resources`
 
 Once the application is running then the REST endpoints are accessible via port 8080.
 * http://localhost:8080/records/gender
 * http://localhost:8080/records/name
 * http://localhost:8080/records/birthdate
 
+POST with JSON body {"lastName":"Jetson","firstName":"George","gender":"M","favoriteColor":"Blue","dateOfBirth":"1934-01-18"}  
+* http://localhost:8080/records
+
 
 ### Implementation
-This is a SpringBoot application written in Java 8.
-The code is fully reactive and relies on Spring's WebFlux Framework.
-The underlying data store is an Embedded Reactive MongoDB.
+This is a SpringBoot application written in Java 8.  
+The code is fully reactive and relies on Spring's WebFlux Framework.  
+The underlying data store is an Embedded Reactive MongoDB.  
 
 ### Test Code
-Unit tests were written in JUnit 5. 
+Unit tests were written in JUnit 5.     
 Test code coverage is 98%.
 
 
 ### Example Execution
 
-$ pwd
-/code/webflux-record-rest/account
-$ ./gradlew bootRun --args=records.txt,records2.txt,records3.txt
+$ pwd  
+/code/webflux-record-rest/account  
+$ ./gradlew bootRun --args=records.txt,records2.txt,records3.txt  
+
 
 > Task :bootRun  
  :: Spring Boot ::        (v2.2.6.RELEASE)     
